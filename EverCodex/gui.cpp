@@ -20,7 +20,7 @@ void InitializeSDL() {
 	}
 
 	SDL_WindowFlags window_flags = (SDL_WindowFlags)(!(SDL_WINDOW_RESIZABLE) | SDL_WINDOW_ALLOW_HIGHDPI);
-	window = SDL_CreateWindow("EverCodex", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, window_flags);
+	window = SDL_CreateWindow("Boilerplate", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1280, 720, window_flags);
 	if (window == nullptr) {
 		printf("Error: SDL_CreateWindow(): %s\n", SDL_GetError());
 		throw std::runtime_error("Failed to create SDL window");
@@ -44,8 +44,7 @@ void InitializeImGui()
 	ImGui_ImplSDLRenderer2_Init(renderer);
 
 	io.Fonts->AddFontDefault();
-	titleFont = io.Fonts->AddFontFromFileTTF("Fonts\\ArsenalSC-Bold.ttf", 32.0f);
-	suffixFont = io.Fonts->AddFontFromFileTTF("Fonts\\ArsenalSC-Italic.ttf", 24.0f);
+
 
 	IM_ASSERT(titleFont != nullptr);
 
